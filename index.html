@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JB Sales Academy</title>
+<meta name="description" content="JB Sales Academy — Academia especializada en formar closers de ventas." />
+<link rel="icon" type="image/png" href="logo1.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #030302;
+    --fg: #ffffff;
+    --border: rgba(255, 255, 255, 0.08);
+    --brand: #1d3679;
+    --brand-dark: #152859;
+    --accent: #8fb0ff;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-heavy: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 24px 20px 0;
+  }
+
+  .header-pill {
+    width: min(1800px, 96vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 16px 40px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+  }
+
+  .logo-mark {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .wordmark {
+    font-family: var(--font-display);
+    font-size: 22px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .wordmark .sub { font-weight: 300; color: rgba(255, 255, 255, 0.55); }
+
+  main {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 64px 20px 90px;
+  }
+
+  .hero-title {
+    position: relative;
+    z-index: 1;
+    max-width: 980px;
+    margin: 0 0 56px;
+    text-align: center;
+    font-family: var(--font-heavy);
+    font-weight: 800;
+    font-size: clamp(1.05rem, 2.16vw, 1.65rem);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: #fff;
+  }
+
+  .video-frame {
+    position: relative;
+    z-index: 1;
+    width: min(980px, 88vw);
+    aspect-ratio: 16 / 9;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #000;
+    border: 1px solid var(--border);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.65);
+  }
+
+  .video-frame iframe,
+  .video-frame video {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  .calendly-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 21px;
+    padding: 36px 62px;
+    border-radius: 999px;
+    background: var(--brand);
+    color: #fff;
+    font-family: var(--font-heavy);
+    font-weight: 700;
+    font-size: 1.82rem;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(29, 54, 121, 0.5);
+    transition: transform 0.2s var(--ease-out), background-color 0.2s var(--ease-out);
+  }
+  .calendly-btn:hover { background: var(--brand-dark); transform: scale(1.04); }
+  .calendly-btn svg { width: 44px; height: 44px; flex-shrink: 0; }
+
+  .who-section {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 720px;
+    margin-top: 110px;
+  }
+
+  .who-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: var(--font-heavy);
+    font-weight: 800;
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    letter-spacing: 0.02em;
+    color: #fff;
+    margin: 0 0 14px;
+  }
+
+  .who-intro {
+    text-align: center;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 0 48px;
+  }
+
+  .who-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .who-list li {
+    display: flex;
+    gap: 20px;
+    padding: 28px 0;
+    border-top: 1px solid var(--border);
+  }
+  .who-list li:first-child { border-top: none; padding-top: 0; }
+  .who-list li:last-child { padding-bottom: 0; }
+
+  .who-num {
+    flex-shrink: 0;
+    width: 34px;
+    font-family: var(--font-heavy);
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--accent);
+    text-transform: none;
+  }
+
+  .who-lead {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+    margin: 0 0 8px;
+  }
+
+  .who-desc {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0;
+  }
+
+  .who-closing {
+    text-align: center;
+    margin: 48px 0 0;
+    font-family: var(--font-heavy);
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: #fff;
+  }
+
+  .calendly-cta-center {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 64px;
+  }
+
+  .site-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 36px;
+    padding: 32px 20px 40px;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-inner {
+    width: 100%;
+    max-width: 680px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-block h3 {
+    margin: 0 0 6px;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .footer-block p {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 0.7rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .footer-copy {
+    margin: 8px 0 0;
+    text-align: center;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  @media (max-width: 640px) {
+    header { padding: 16px 14px 0; }
+    .header-pill { padding: 10px 20px; gap: 5px; }
+    .logo-mark { width: 26px; height: 26px; }
+    .wordmark { font-size: 17px; }
+    main { padding: 40px 16px 60px; }
+    .hero-title { margin-bottom: 36px; }
+    .video-frame { border-radius: 14px; }
+    .calendly-btn { padding: 26px 42px; font-size: 1.5rem; gap: 16px; }
+    .calendly-btn svg { width: 34px; height: 34px; }
+    .who-section { margin-top: 64px; }
+    .who-intro { margin-bottom: 32px; }
+    .who-list li { padding: 22px 0; gap: 14px; }
+    .calendly-cta-center { margin-top: 44px; }
+    .site-footer { margin-top: 56px; padding: 24px 16px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-pill">
+    <img src="logo1-white.png" alt="JB Sales Academy" class="logo-mark" />
+    <div class="wordmark"><span class="sub">Sales Academy</span></div>
+  </div>
+</header>
+
+<main>
+  <!-- PROPUESTA: revisar título -->
+  <h1 class="hero-title">Cómo convertirte en closer de ventas high-ticket y trabajar de forma remota, aunque empieces desde cero:</h1>
+
+  <div class="video-frame">
+    <iframe
+      src="https://www.youtube.com/embed/AdzY58HzVJA?rel=0"
+      title="JB Sales Academy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <div class="calendly-cta-center">
+    <a href="#" class="calendly-btn" aria-label="Agenda aquí" onclick="openAgenda(); return false;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      <span>Agenda aquí</span>
+    </a>
+  </div>
+
+  <!-- PROPUESTA: revisar los 4 puntos del perfil -->
+  <section class="who-section">
+    <h2 class="who-title">¿Para quién es la academia?</h2>
+    <p class="who-intro">Trabajamos con personas que cumplen este perfil:</p>
+    <ol class="who-list">
+      <li>
+        <span class="who-num">1</span>
+        <div>
+          <p class="who-lead">Quieres desarrollar una habilidad de alto valor.</p>
+          <p class="who-desc">Buscas una profesión que te permita generar ingresos por tu capacidad de cerrar ventas, no por las horas que pasas frente a un escritorio.</p>
+        </div>
+      </li>
+      <li>
+        <span class="who-num">2</span>
+        <div>
+          <p class="who-lead">Te sientes cómodo hablando con personas.</p>
+          <p class="who-desc">No necesitas experiencia previa en ventas, pero sí disposición para conversar, escuchar y hacer llamadas todos los días.</p>
+        </div>
+      </li>
+      <li>
+        <span class="who-num">3</span>
+        <div>
+          <p class="who-lead">Estás dispuesto a entrenar y recibir feedback.</p>
+          <p class="who-desc">Un closer se forma practicando. Vas a analizar tus llamadas, corregir errores y mejorar semana a semana. Si no estás abierto a la crítica, no somos para ti.</p>
+        </div>
+      </li>
+      <li>
+        <span class="who-num">4</span>
+        <div>
+          <p class="who-lead">Piensas a largo plazo.</p>
+          <p class="who-desc">No vendemos atajos ni dinero fácil. Te formamos en una habilidad que te acompaña toda tu carrera. Buscamos personas comprometidas con su crecimiento.</p>
+        </div>
+      </li>
+    </ol>
+    <p class="who-closing">Si cumples con esto, hablemos.</p>
+  </section>
+
+  <div class="calendly-cta-center">
+    <a href="#" class="calendly-btn" aria-label="Agenda aquí" onclick="openAgenda(); return false;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      <span>Agenda aquí</span>
+    </a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-block">
+      <h3>Política de Privacidad</h3>
+      <p>Recopilamos datos (nombre, teléfono, email y datos de navegación) cuando interactúas con nuestros anuncios, sitio o nos escribes. Los usamos para contactarte y brindarte información sobre nuestros programas de formación; no los vendemos. Utilizamos WhatsApp para comunicarnos contigo.</p>
+    </div>
+    <div class="footer-block">
+      <h3>Naturaleza de nuestro servicio</h3>
+      <p>JB Sales Academy es una academia especializada en la formación de closers de ventas. Brindamos capacitación y entrenamiento práctico; no somos una agencia de empleo ni garantizamos ingresos, contrataciones o resultados específicos. Los resultados dependen del esfuerzo, la dedicación y la aplicación de cada alumno.</p>
+    </div>
+    <div class="footer-block">
+      <h3>Descargo de responsabilidad</h3>
+      <p>Este sitio no forma parte del sitio web de Facebook ni de Facebook Inc., ni está avalado por Facebook de ninguna manera. Facebook es una marca registrada de Meta Platforms, Inc.</p>
+    </div>
+    <p class="footer-copy">© 2026 JB Sales Academy. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script>
+  const AGENDA_URL = 'https://calendly.com/block-/reunion-con-joel-1';
+
+  function openAgenda() {
+    if (!AGENDA_URL) return;
+    if (window.Calendly) {
+      Calendly.initPopupWidget({ url: AGENDA_URL });
+    } else {
+      window.open(AGENDA_URL, '_blank', 'noopener');
+    }
+  }
+</script>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>
